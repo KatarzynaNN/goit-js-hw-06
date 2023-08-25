@@ -8,13 +8,14 @@ const divBoxes = document.querySelector("#boxes");
 const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy]");
 const numberInput = document.querySelector("#controls input");
+const initialSize = 30;
+const increment = 10;
 
 function createBoxes(amount) {
-	const pixels = 30;
 	for (let i = 0; i < amount; i++) {
 		const newDiv = document.createElement("div");
-		newDiv.style.width = `${pixels + i * 10}px`;
-		newDiv.style.height = `${pixels + i * 10}px`;
+		newDiv.style.width = `${initialSize + i * increment}px`;
+		newDiv.style.height = `${initialSize + i * increment}px`;
 		newDiv.style.backgroundColor = getRandomHexColor();
 		divBoxes.append(newDiv);
 	}
