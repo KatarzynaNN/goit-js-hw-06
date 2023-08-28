@@ -14,11 +14,16 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-const tableItemList = [];
+// const tableItemList = [];
 
-for (let image of images) {
-	const itemList = `<li class="image"><img src="${image.url}" alt="${image.alt}" width = 50% height = auto /></li>`;
-	tableItemList.push(itemList);
-}
+// for (let image of images) {
+// 	const itemList = `<li class="image"><img src="${image.url}" alt="${image.alt}" width = 50% height = auto /></li>`;
+// 	tableItemList.push(itemList);
+// }
+
+const tableItemList = images.map((image) => {
+	const itemList = `<li class="image"><img src="${image.url}" alt="${image.alt}" /></li>`;
+	return itemList;
+});
 
 gallery.insertAdjacentHTML("beforeend", tableItemList.join(""));
